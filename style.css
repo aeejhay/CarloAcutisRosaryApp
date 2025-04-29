@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f3f1ed;
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(images/heaven.jpg);
+  background-size: cover;  
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 2rem;
+  color: #4a3e3e;
+}
+
+button {
+  background-color: #5e8b7e;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #49796b;
+}
+
+#mysteryToday {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+img#carlo_acutis {
+    width: 100px;
+    margin: 20px auto 0;
+}
