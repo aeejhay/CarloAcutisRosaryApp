@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Novena to Carlo Acutis - Rosary Prayer App</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .novena-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+    
+    .novena-header {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+    
+    .novena-header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #34495e;
+    }
+    
+    .day-selector {
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    .day-selector select {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: 2px solid #3498db;
+      border-radius: 25px;
+      background: white;
+      color: #2c3e50;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    
+    .day-selector select:hover {
+      border-color: #2980b9;
+      box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+    }
+    
+    .prayer-content {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+    
+    .opening-prayer {
+      border-left: 4px solid #3498db;
+      padding-left: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .meditation {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      text-align: center;
+      font-size: 1.1em;
+    }
+    
+    .venerable-prayer {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    .rosary-instruction {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .final-prayer {
+      border-left: 4px solid #e74c3c;
+      padding-left: 20px;
+      margin-top: 30px;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .back-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    .back-link a {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    
+    .back-link a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .day-content {
+      display: none;
+    }
+    
+    .day-content.active {
+      display: block;
+    }
+    
+    .carlo-image {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .carlo-image img {
+      width: 150px;
+      height: 190px;
+      border-radius: 50%;
+      border: 4px solid #3498db;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="novena-container">
+    <div class="novena-header">
+      <h1>Novena to the Venerable Carlo Acutis</h1>
+      <div class="carlo-image">
+        <img src="images/carlo_acutis.jpg" alt="Carlo Acutis">
+      </div>
+    </div>
+    
+    <!-- Opening Prayer - Always Visible -->
+    <div class="prayer-content opening-prayer">
+      <h2>Opening Prayer</h2>
+      <p>Most Holy Trinity, Father, Son and Holy Spirit, I thank you for all the grace and favours with which you enriched the soul of the Servant of God Carlo Acutis during his 15 years on this earth. Through the merits of this Angel of Youth, grant me the grace which I earnestly seek (Ask the grace which you seek).</p>
+    </div>
+    
+    <div class="day-selector">
+      <select id="daySelect" onchange="showDay()">
+        <option value="">Select a Day</option>
+        <option value="day1">First Day</option>
+        <option value="day2">Second Day</option>
+        <option value="day3">Third Day</option>
+        <option value="day4">Fourth Day</option>
+        <option value="day5">Fifth Day</option>
+        <option value="day6">Sixth Day</option>
+        <option value="day7">Seventh Day</option>
+        <option value="day8">Eighth Day</option>
+        <option value="day9">Ninth Day</option>
+      </select>
+    </div>
+    
+    <!-- First Day -->
+    <div id="day1" class="day-content">
+      <div class="prayer-content">
+        <h2>First Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "Not me, but God"
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, you who made your life a continual renunciation and setting aside of unimportant things, give me the grace to seek heavenly things and despise that which is transient. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Second Day -->
+    <div id="day2" class="day-content">
+      <div class="prayer-content">
+        <h2>Second Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "Always to be united with Jesus, that is my life's programme"
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, you who have lived in the heart of Jesus, give me the grace to apply Jesus's plan of love to everything. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Third Day -->
+    <div id="day3" class="day-content">
+      <div class="prayer-content">
+        <h2>Third Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "Continuously ask your Guardian Angel for help. Your Guardian Angel has to become your best friend"
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, you who saw the company of Holy Angels while you were already in this world, give me the Grace to live righteously, as my Guardian Angel desires. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Fourth Day -->
+    <div id="day4" class="day-content">
+      <div class="prayer-content">
+        <h2>Fourth Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "Our soul is like a hot-air balloon... If by chance there is a mortal sin, the soul falls to the ground. Confession is like the fire underneath the balloon enabling the soul to rise again… It is important to go to confession often"
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, you who have lived this sacrament of reconciliation so well, give me the grace constantly to seek confession and the grace of a deep contrition. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Fifth Day -->
+    <div id="day5" class="day-content">
+      <div class="prayer-content">
+        <h2>Fifth Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "Sadness is looking at ourselves, happiness is looking towards God"
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, you who have never looked away from your great love, Jesus, give me the grace also to live with this happiness in this world. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sixth Day -->
+    <div id="day6" class="day-content">
+      <div class="prayer-content">
+        <h2>Sixth Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "The only thing we have to ask God for, in prayer, is the desire to be holy"
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, you who have always asked God for what is essential, give me the grace of a deep desire for Heaven. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Seventh Day -->
+    <div id="day7" class="day-content">
+      <div class="prayer-content">
+        <h2>Seventh Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "The Virgin Mary is the only Woman in my life"
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, you who loved the Virgin Mary above all women, give me the grace to respond to her kind and good love. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Eighth Day -->
+    <div id="day8" class="day-content">
+      <div class="prayer-content">
+        <h2>Eighth Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "The Eucharist is my highway to Heaven"
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, you who have always looked for your hidden Jesus in the Tabernacle, give me the grace of a deep fervour for the Eucharist. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Ninth Day -->
+    <div id="day9" class="day-content">
+      <div class="prayer-content">
+        <h2>Ninth Day</h2>
+        <div class="meditation">
+          <strong>Meditation:</strong><br>
+          "I am happy to die because I have lived my life without wasting a minute on those things which do not please God."
+        </div>
+        <div class="venerable-prayer">
+          <p>Venerable Carlo Acutis, give me that grace of graces – perseverance to the end and a saintly death. Amen.</p>
+        </div>
+        <div class="rosary-instruction">
+          <p>Pray the rosary to give thanks to God for the grace granted to Carlo in the 15 years of his earthly life.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Final Prayer - Always Visible -->
+    <div class="prayer-content final-prayer">
+      <h2>Final Prayer</h2>
+      <p>Almighty God, Father of Mercy, raise your Servant Carlo Acutis to the glory of the altars, so that through him you will be even more glorified. Give us the honour of calling him "Blessed", for he lived Your Will in all things. And through his merit, give me the grace that I so ardently desire. Amen</p>
+    </div>
+    
+    <div class="back-link">
+      <a href="index.html">← Back to Rosary App</a>
+    </div>
+  </div>
+
+  <script>
+    function showDay() {
+      const select = document.getElementById('daySelect');
+      const selectedValue = select.value;
+      
+      // Hide all day contents
+      const allContents = document.querySelectorAll('.day-content');
+      allContents.forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      // Show selected content
+      if (selectedValue) {
+        const selectedContent = document.getElementById(selectedValue);
+        if (selectedContent) {
+          selectedContent.classList.add('active');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

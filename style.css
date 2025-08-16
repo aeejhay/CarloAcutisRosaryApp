@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f3f1ed;
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(images/heaven.jpg);
+  background-size: cover;
+  flex-wrap: wrap;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  color: #4a3e3e;
+}
+
+button {
+  background-color: #5e8b7e;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #49796b;
+}
+
+button#startBtn {
+  font-family: inherit;
+}
+
+#mysteryToday {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+img#carlo_acutis {
+    width: 100px;
+    margin: 20px auto 0;
+}
+
+.prayer-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  border-left: 4px solid #5e8b7e;
+}
+
+.prayer-section h2 {
+  color: #4a3e3e;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.prayer-text {
+  line-height: 1.8;
+  color: #2c3e50;
+  text-align: left;
+}
+
+.prayer-text p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.navigation-links {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.novena-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.novena-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.rosary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(135deg, #5e8b7e 0%, #49796b 100%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(94, 139, 126, 0.3);
+  margin: 1rem 0;
+}
+
+.rosary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(94, 139, 126, 0.4);
+  background: linear-gradient(135deg, #49796b 0%, #3d6b5f 100%);
+}
+
+.rosary-icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
